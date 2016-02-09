@@ -1,0 +1,61 @@
+extends publicLayout
+block content
+  .default-page
+      .header
+        h1#main-title.container GSC Beacon
+         
+      .main.container.clearfix
+        h2  Welcome to the GSC Beacon (under construction)
+               
+        ul.getting-started
+          li.clearfix
+            .step
+              .sprite.one
+              
+              h3 GSC Beacon 
+              br                   
+              h4 Retrieve beacon information in standard format (JSON) 
+              br                   
+              a(href='/beacon')
+                button.btn.btn-primary Beacon Info (JSON)
+              br
+              br
+              p URL syntax: 
+                b &quot;http://limsdev06.bcgsc.ca/beacon/beacon&quot;
+                     
+              p &nbsp;
+              br
+              h4 Find Variants using the GSC Beacon
+              br
+              a(href='/UI')
+                button.btn.btn-primary Access Online User Interface
+                     
+          li.clearfix
+            .step
+              .sprite.two
+                                 
+              h3 BRCA Challenge
+              br 
+              h4 Search GSC for BRCA variant data
+              br      
+              a(href='/brca/search')
+                button.btn.btn-primary BRCA Data Finder 
+          
+          li.clearfix
+            .step
+              .sprite.three
+                                 
+              h3
+               Learn More:
+                                 
+              b  ... About using the GSC Beacon 
+              p Please visit our &apos;Docs&apos; links for using the GSC Beacon. 
+              p Feel free to Contact us directly if you would like more information. 
+                                    
+              p &nbsp;
+                                 
+              b  ... About the Beacon Project 
+                                 
+              p Please visit our &apos;Community&apos; links for more general information about the Beacon Project. 
+        
+        include Links
