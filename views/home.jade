@@ -5,39 +5,25 @@ block content
         h1#main-title.container Nokcha Tea
          
       .main.container.clearfix
-        h2  Welcome to Nokcha Tea House
+          i.fa.fa-coffee.fa-3x
+          h2  Welcome to Nokcha Tea House
                
-        ul.getting-started
-          li.clearfix
-            .step
-              .sprite.one
-              
-              h3 Tea
-              br                   
-              h4 About Tea ...
-              br                   
-              a(href='/teas')
-                button.btn.btn-primary Go to main Tea page
-              br
-                     
-          li.clearfix
-            .step
-              .sprite.two
-                                 
-              h3 Ceramics
-              br 
-              h4 About Ceramics 
-              br      
-              a(href='/ceramics')
-                button.btn.btn-primary Go to Ceramics page
-          
-          li.clearfix
-            .step
-              .sprite.three
-                                 
-              h3 Visit Us
-                                 
-              h4 The Blue Banana
+          ul.getting-started
+            li.clearfix
+              .step
+                a(href='/teas')
+                  button.btn.btn-large(style="background-color:#533; color:#eee") Teas
+                       
+            li.clearfix    
+              .step                            
+                a(href='/ceramics')
+                  button.btn.btn-large(style="background-color:#533; color:#eee") Ceramics 
+            
+            hr 
 
-        // If link section to the right include line below (and adjust Links.jade file as required) //
-        include Links
+            h5 Find us at the Blue Banana Market (Kensington), Toronto, ON 
+            script(src="http://maps.googleapis.com/maps/api/js")
+            div#googleMap(style="width:500px;height:380px;")
+          
+          // If link section to the right include line below (and adjust Links.jade file as required) //
+          include Links
