@@ -1,10 +1,7 @@
 extends publicLayout
 block content
-  .default-page
-      .header
-        h1#main-title.container Nokcha Tea
-         
-      .main.container.clearfix
+  div.container
+    .default-page
           i.fa.fa-coffee.fa-3x
           h2  Welcome to Nokcha Tea House
                
@@ -12,12 +9,12 @@ block content
             li.clearfix
               .step
                 a(href='/teas')
-                  button.btn.btn-large(style="background-color:#533; color:#eee") Teas
+                  button.btn.btn-lg(style="background-color:#533; color:#eee") Teas
                        
             li.clearfix    
               .step                            
                 a(href='/ceramics')
-                  button.btn.btn-large(style="background-color:#533; color:#eee") Ceramics 
+                  button.btn.btn-lg(style="background-color:#533; color:#eee") Ceramics 
             
             hr 
 
