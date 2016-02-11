@@ -36,8 +36,26 @@ module.exports.routes = {
 
   '/contact' : { view: 'ContactUs'},
 
-  '/teas/black': { view: 'black-tea'},
-  '/teas/green': { view: 'green-tea'},
+  // Default User pages 
+  'GET /user/dashboard/:id': 'UserController.dashboard',
+  'GET /user/:id': 'UserController.dashboard',
+
+ 'GET /api': 'QueryController.staff',
+  'GET /api/q': 'QueryController.query',
+  'POST /api/search': 'QueryController.search',
+
+  'GET /': { view: 'public' },
+  'GET /homepage': { view: 'homepage' },
+
+  /* Generic Record control options */
+  'GET /record/form/:table': 'RecordController.form',
+
+  'GET /record/add/:table': 'RecordController.new',
+  'POST /record/add/:table': 'RecordController.add',
+  'GET /record/edit/:table': 'RecordController.edit',
+  'POST /record/edit/:table': 'RecordController.update',
+
+  'GET /lookup/:table' : 'RecordController.lookup',
 
   /***************************************************************************
   *                                                                          *
@@ -48,5 +66,11 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+
+  '/teas' : { view: 'Teas' },
+  '/teas/black': { view: 'black-tea'},
+  '/teas/green': { view: 'green-tea'},
+
+  '/ceramics' : { view : 'Ceramics' }
 
 };
