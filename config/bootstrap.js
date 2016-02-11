@@ -31,22 +31,23 @@ module.exports.bootstrap = function(cb) {
   		for (var j=0; j<attributes.length; j++) {
 			var att = attributes[j];
 
+			var Table = Model.tableName;
 			var Atype = Model.attributes[att].type;
 			var Aenum =  Model.attributes[att].enum;
 		        var defaultsTo = Model.attributes[att].defaultsTo;
 			
-			if (defaultsTo) { defaultsTo = ' DEFAULT "' + defaultsTo + '"' }
+			if (defaultsTo) { defaultsTo = ' DEFAULT \'' + defaultsTo + '\'' }
 			else { defaultsTo = '' }
 	
 			// console.log(att + " : " + Atype + " " + Aenum);
 			if (Aenum) {
-				var command = " ALTER TABLE " + models[i] + " MODIFY " + att + " ENUM('" + Aenum.join("','") + "') " + defaultsTo;
+				var command = " ALTER TABLE " + Table + " MODIFY " + att + " ENUM('" + Aenum.join("','") + "') " + defaultsTo;
 				console.log(command); 
 
 		  		Record.query(command, function (err, result) {
 		  			if (err) {
 						console.log("ERROR:" + err);
-						cb(err);
+						errors.push(err);
 		     		}
 		  		});
 
