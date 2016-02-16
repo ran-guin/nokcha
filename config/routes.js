@@ -32,15 +32,23 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'home' },
+  ////////////////////////////////////////////////////////////
+  // JSON API
+  ////////////////////////////////////////////////////////////
 
-  '/contact' : { view: 'ContactUs'},
+  // User enrollment + authentication
+  'GET /signup': {view: 'signup'},
+  'POST /signup': 'UserController.signup',
+  'GET /login': 'UserController.login',
+  'GET /logout': 'UserController.logout',
 
   // Default User pages 
+  '/contactUs' : { view : 'ContactUs' {,
   'GET /user/dashboard/:id': 'UserController.dashboard',
   'GET /user/:id': 'UserController.dashboard',
 
- 'GET /api': 'QueryController.staff',
+
+  'GET /api': 'QueryController.staff',
   'GET /api/q': 'QueryController.query',
   'POST /api/search': 'QueryController.search',
 
@@ -48,15 +56,13 @@ module.exports.routes = {
   'GET /homepage': { view: 'homepage' },
 
   /* Generic Record control options */
-  'GET /record/form/:table': 'RecordController.form',
-
   'GET /record/add/:table': 'RecordController.new',
   'POST /record/add/:table': 'RecordController.add',
   'GET /record/edit/:table': 'RecordController.edit',
   'POST /record/edit/:table': 'RecordController.update',
 
   'GET /lookup/:table' : 'RecordController.lookup',
-
+ 
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
