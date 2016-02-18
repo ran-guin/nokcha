@@ -43,7 +43,7 @@ module.exports.routes = {
   'GET /logout': 'UserController.logout',
 
   // Default User pages 
-  '/contactUs' : { view : 'ContactUs' {,
+  '/contactUs' : { view : 'ContactUs' },
   'GET /user/dashboard/:id': 'UserController.dashboard',
   'GET /user/:id': 'UserController.dashboard',
 
